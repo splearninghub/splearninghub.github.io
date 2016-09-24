@@ -7,6 +7,12 @@ $(function() {
   $('footer').css({display:'none'});
   $('footer').fadeIn(3000);
 
+  $('a').on('click',function (e) {
+    e.preventDefault();
+     $("body,html").animate({
+       scrollTop: $( $(this).attr('href') ).offset().top},1800);
+  });
+
 $.getJSON("https://hackerearth.0x10.info/api/learning-paths?type=json&query=list_paths",function (data) {
   $.each(data,function(){
       $.each(this,function(key,value){
